@@ -1,0 +1,1107 @@
+body {
+    background-color: #ccc; /* subject to change */
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container header {
+    padding-right: 0;
+    /*margin-top: -20px;*/
+}
+
+
+nav {
+    float: left;
+}
+
+nav .line {
+    background-color: #fff;
+}
+
+.landbay-logo {
+    margin-bottom: 40px;
+}
+
+nav ul li {
+    font-size: 1.20em;
+    float: left;
+    display: block;
+    text-transform: uppercase;
+    margin-right: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+ul.nav-bar li.active {
+    border-bottom: 10px solid #fff;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+}
+
+.log-out {
+    text-align: right;
+}
+
+.log-out a {
+    color: #fff;
+}
+
+
+/****************Products****************/
+
+.content {
+    width: 100%;
+    float: left;
+    padding: 20px 0 0 20px;
+}
+
+.content.prod {
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.cont-title {
+    font-size: 1.20em;
+}
+
+.cont-sub-title {
+    font-size: 1em;
+}
+
+.content.order {
+    background: #495259;
+    color: #fff; 
+}
+
+.container {
+    width: 100%;
+	max-width: 1320px;
+	margin: 0 auto;
+}
+
+.caption-row {
+    margin-bottom: 30px;
+    width: 100%;
+    float: left;
+}
+
+.caption-row .cont-title {
+    float: left;
+}
+
+.radio-search {
+    float: right;
+    padding-right: 20px;
+}
+
+.radio-item {
+    margin-left: 15px;
+    float: left;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+
+.table-row {
+    margin: 0 0 30px 0;
+    float: left;
+    width: 100%;
+}
+/*
+.prod-col {
+    width: 48%;
+}
+*/
+
+.rate-col {
+    width: 22%;
+}
+
+.prod-icon {
+    width: 55px;
+    height: 55px;
+    float: left;
+    margin-right: 10px;
+    background: url("../assets/lender_sprite.png") no-repeat;
+}
+
+.prod-icon.fixed {
+    background-position: -150px -1px;
+}
+
+.prod-icon.tracker {
+    background-position: -372px -1px;
+}
+
+.prod-type {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.20em;
+}
+
+.prod-term {
+    color: #888;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+.prod-desc {
+    font-size: 0.80em;
+}
+
+.prod-percent {
+    font-size: 1.75em;
+}
+
+.prod-pa {
+    font-size: 0.95em;
+}
+
+.pound-icon {
+    color: #888;
+    font-weight: bold;
+    position: absolute;
+    font-size: 1.20em;
+    margin-left: -12px;
+}
+
+.amount-col {
+    width: 27%;
+}
+
+.decimal-point {
+    float: left;
+    font-weight: bold;
+    margin-top: 14px;
+}
+
+input.amount-pound {
+    border: none;
+    width: 100%;
+    float: left;
+    font-size: 2em;
+    padding: 0;
+    text-align: right;
+}
+
+.line {
+    height: 1px;
+    background-color: #666;
+    width: 100%;
+    clear: both;
+    float: left;
+}
+
+/****************Order****************/
+
+.order-col {
+    padding-right: 10px;
+}
+
+.content.order {
+    padding: 20px;
+}
+
+.cont-copy {
+    font-size: 0.90em;
+}
+
+.cont-amount {
+    font-size: 2em;
+    text-align: right;
+}
+
+.cont-amount span {
+    font-size: 66%;
+}
+
+span.trusted-symbol {
+    font-size: 100% !important;
+}
+
+.content.order .line {
+    margin-bottom: 20px;
+}
+
+.ldb-button {
+    color: #fff;
+    padding: 20px;
+    min-width: 200px;
+    margin: 0 auto;
+    font-size: 1.15em;
+    text-align: center;
+    display: block;
+    border: none;
+    text-transform: uppercase;
+}
+
+.invest-btn.ldb-button,
+.statements .ldb-button {
+    background-color: #0b9efb;
+}
+
+.withdraw-btn.ldb-button {
+    background-color: #4372AA;
+}
+
+.withdraw-btn.disable {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.prod .invest-btn.ldb-button {
+    float: left;
+}
+
+.prod .withdraw-btn.ldb-button {
+    float: right;
+}
+
+a.ldb-button {
+    text-decoration: none;
+    clear: both;
+    width: 200px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+/****************Incentive****************/
+
+.incentv-col {
+    padding: 0 0 0 10px;
+}
+
+.content.incentv {
+    padding: 20px;
+    background-color: #28d2c8;
+    color: #fff;
+}
+
+.content.incentv .cont-title, 
+.content.incentv .incentv-amount, 
+.content.incentv .incentv-desc {
+    margin-bottom: 0;
+}
+
+.incentv-amount {
+   font-size: 4em;
+}
+
+.incentv-amount span {
+    font-size: 66%;
+}
+
+.incentv-desc {
+    font-size: 0.90em;
+}
+
+/****************** Modal ********************/
+
+.row-title {
+    font-size: 1.20em;
+}
+
+.ajax-loader {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+}
+
+.full-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,.8);
+    z-index: 9999;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 750px;
+    /*min-width: 500px;*/
+    height: 750px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -375px;
+    margin-top: -375px;
+    padding: 40px;
+}
+
+.modal-box.overlay {
+    background-color: #fff;
+    opacity: 0.7;
+}
+
+.close-btn {
+    background: url('../assets/close.png') no-repeat;
+    width: 18px;
+    height: 18px;
+    border: none;
+    padding: 0;
+}
+
+.modal.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    text-indent: -9999px;
+}
+
+.back-btn {
+    border: none;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background: url("../assets/back-button.png") no-repeat;
+}
+
+.modal.back-btn {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    text-indent: -9999px;
+}
+
+.modal-box .cont-title {
+    margin: 20px 0 20px;
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+
+.modal-btn-grp {
+    width: 75%;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.modal-box .table-btn.close-btn {
+    float: right;
+}
+
+.icons-col {
+    padding-right: 0;
+}
+
+.table-row.modal-last-row {
+    margin-bottom: 15px;
+}
+
+.table-row.modal-last-row + .line {
+    margin-bottom: 40px;
+}
+
+.bank-transfer-box {
+    margin: 0 auto 30px;
+    padding: 15px;
+    background-color: #666;
+    color: #fff;
+}
+
+.bank-transfer-box .cont-title {
+    margin-bottom: 10px;
+}
+
+.bank-transfer-box p {
+    font-size: 0.90em;
+    text-align: center;
+}
+
+.lb-bank-account {
+      width: 460px;
+      margin: 0 auto;
+      padding-left: 20px;
+}
+
+.lb-bank-account .key li,
+.lb-bank-account .value li {
+    margin-bottom: 10px;
+}
+
+.lb-bank-account .key li {
+    color: #666;
+}
+
+.lb-bank-account .value li {
+    font-weight: bold;
+}
+
+.modal-btn-outer {
+      clear: both;
+      width: 100%;
+      float: left;
+      margin-top: 30px;
+}
+
+.modal-step-1-2,
+.modal-step-1,
+.modal-step-2,
+.modal-step-3 {
+    float: left;
+    width: 100%;
+}
+
+/******************** PORTFOLIO PAGE ************************/
+
+.content.curr-port {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.amnt-info-big,
+.amnt-info-sml {
+    font-weight: bold;
+    
+    font-style: italic;
+    color: #888;
+    text-align: right;
+}
+
+.amnt-info-big {
+    font-size: 1.2em;
+}
+
+.amnt-info-sml {
+    font-size: 1em;
+}
+
+.content.intrst-earnd {
+    background-color: #ddd;
+     padding: 20px;
+}
+
+.content.port-history {
+  background: #fff;
+  padding: 20px 0 20px;
+}
+
+.content.port-history .caption-row {
+    padding-left: 20px;
+}
+
+.last-col {
+    text-align: right;
+}
+
+.last-col .pound-icon {
+    margin-top: 3px;
+}
+
+.last-col span.investd-pound {
+     font-size: 1.75em;
+}
+
+.last-col span.investd-pence {
+    font-size: 1.30em;
+}
+
+/**********TEMP STYLE*********/
+.temp-box {
+    background-color: #ddd;
+    height: 300px;
+}
+/**********TEMP STYLE*********/
+
+.table-row .panel-wrapper {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.table-row .panel-wrapper .panel-info {
+    padding: 20px;
+        float: left;
+    width: 100%;
+}
+
+.prod .panel-wrapper .panel-info {
+    background-color: #495259;
+    color: #fff;
+}
+
+.prod.table-row {
+    margin: 0;
+}
+
+.table-row .row-item {
+    float: left;
+    width: 100%;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+
+.prod.table-row .row-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.table-row .row-item.hover-on:hover {
+    background-color: #eee;
+}
+
+.table-row .row-item.hover-off:hover {
+    background-color: #fff;
+}
+
+.pointer {
+    width: 20px;
+    height: 15px;
+    margin: 0 auto;
+}
+
+.panel-int-info {
+    width: 100%;
+    margin: 20px 0;
+    float: left;
+}
+
+.panel-int-copy {
+    float: left;
+    width: 66%;
+}
+
+.panel-int-amt {
+    float: right;
+    font-size: 2.25em;
+}
+
+.panel-title {
+    margin-bottom: 10px;
+}
+
+.panel-info .cont-title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.panel-info .prod-term {
+    color: #fff;
+}
+
+.table-header {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+    font-size: 0.90em;
+    color: #888;
+}
+
+.total-withdraw {
+    text-align:right; 
+    font-size:13px; 
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+/******************** PORTFOLIO PAGE ************************/
+
+/******************** WALLET PAGE ************************/
+
+.wallet-pane .first-col {
+    padding-left: 30px;
+}
+
+.wallet-pane .last-col {
+    padding-right: 0;
+}
+
+.content.cash-acc,
+.content.bank-acc {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.content.bank-acc span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.content.cash-acc .line {
+    margin-bottom: 20px;
+}
+
+.content.wallet-pane {
+    background-color: #fff;
+    padding: 20px 0 20px;
+}
+
+ul.pane-tabs {
+    width: 100%;
+    background-color: #495259;
+}
+
+ul.pane-tabs li {
+    color: #fff;
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    padding: 10px 5px 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+ul.pane-tabs li.active {
+    border-bottom: 5px solid #0B9EFB;
+} 
+
+.wallet-pane .row-item {
+    padding-top: 15px;
+}
+
+.wallet-pane .table-row {
+    margin: 0;
+}
+
+.wallet-pane .table-header {
+    margin-top: 10px;
+}
+
+.wallet-pane .table-row .row-item-inner  {
+    padding-bottom: 10px;
+    margin-right: 20px;
+}
+
+.wallet-pane .table-header .row-item-inner {
+    padding: 20px 20px 0 0;
+    border-top: 1px solid #bbb;
+}
+
+.wallet-pane .table-header .row-item-inner a {
+    color: #888;
+    text-decoration: none;
+}
+
+.icon-history { 
+    width: 30px;
+    height: 25px;
+    float: left;
+    background: url("../assets/wallet-arrows.png") no-repeat;
+}
+
+.icon-loans {
+    background-position: -2px -38px;
+}
+
+.icon-withdrawal {
+    background-position: -2px -1px;
+}
+
+.icon-deposit,
+.icon-interest {
+    background-position: -2px -75px;
+}
+
+.misc-search {
+    margin: 0 0 20px 20px;
+}
+
+.misc-search .text-search input {
+    background-color: #eee;
+    border: none;
+    padding: 5px;
+}
+
+.misc-search .date-search {
+    text-align: right;
+}
+
+.misc-search .date-search input {
+    border: none;
+    border-bottom: 1px solid #888;
+    width: 25%;
+}
+
+.misc-search select.months {
+    width: 100%;
+    padding: 3px;
+    border: 0;
+    background-color: #0B9EFB;
+    color: #fff;
+}
+
+.misc-search select.months option {
+    background-color: #fff;
+    color: #000;
+}
+
+
+.pager-wrapper {
+    max-width: 365px;
+    margin: 0 auto;
+}
+
+ul.pager {
+    float: left;
+    clear: both;
+    padding: 20px 20px 0;
+    float: right;
+}
+
+ul.pager li {
+    float: left;
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+
+.pager>li>a {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #0B9EFB;
+    background-color: #ccc;
+    margin-left: -1px;
+}
+
+.pager>.active>a {
+      z-index: 2;
+      color: #fff;
+      background-color: #888;
+      cursor: default;
+}
+
+.pager>.disabled>a {
+    color: #888;
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.line-wrapper {
+    width: 100%;
+    padding: 0 20px;
+    float: left;
+    clear: both;
+}
+
+.line-wrapper > .line {
+    border-bottom: 1px solid #bbb;
+}
+
+
+/** Withdraw MODAL **/
+
+.withdraw-modal .cont-title {
+    margin-top: 0;
+}
+
+.withdraw-modal .first-row {
+    margin-top: 15px;
+}
+
+.withdraw-modal .first-row .cont-title {
+    text-align: left;
+}
+
+.withdraw-modal .prod-rate {
+    font-size: 0.95em;
+    font-weight: bold;
+    color: black;
+}
+
+.withdraw-modal .prod-rate span {
+    font-weight: normal;
+}
+
+.withdraw-modal .main-desc.prod-desc {
+    margin-bottom: 30px;
+}
+
+.withdraw-modal .amount-col {
+    width: 33%;
+}
+
+.withdraw-modal .icons-col {
+    width: 3%;
+}
+
+.withdraw-modal .amount-col.cont-amount {
+    font-size: 2em;
+}
+
+.modal-box .table-row {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #bbb;
+}
+
+.line.top {
+    margin-bottom: 15px;
+    background-color: #bbb;
+}
+
+.row-cell-elem {
+    width: 73%;
+    float: left;
+}
+
+.modal-amount {
+    font-size: 2em;
+}
+
+.amount-error {
+    font-size: 12px;
+    color: #F00;
+}
+
+.inv-err.amount-error {
+    text-align: right;
+    visibility: hidden;
+}
+
+.inv-err.amount-error.visible {
+    visibility: visible;
+}
+
+.wdr-err.amount-error {
+    text-align: left;
+    margin-top: 40px;
+    width: 175px;
+    position: absolute;
+}
+
+.modal-box .last-col {
+    padding-right: 0;
+}
+
+.pound-square {
+    background: url("../assets/pound-square.png") no-repeat;
+    background-position: -2px -4px;
+}
+
+.modal-box .last-row {
+    border-bottom: 0;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.modal-box .last-row .cont-title {
+    text-align: left;
+}
+
+.modal-btn-center {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+}
+
+
+.overflow-hidden {
+    overflow: hidden;
+}
+/******************** HISTORY ***********************/
+
+.history .panel-wrapper .panel-info {
+    background-color: #ddd;
+    color: #000;
+}
+
+.history .panel-wrapper .panel-info .cont-amount {
+    text-align: left;
+}
+
+.history .panel-wrapper .panel-info .row.last-row {
+    margin-bottom: 0;
+}
+
+.history .panel-wrapper .panel-info .cont-title {
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.history .panel-wrapper .panel-info .line {
+   margin-bottom: 20px;
+   background-color: #fff;
+}
+
+.panel-wrapper .panel-info .cont-ref {
+    font-size: 2em;
+}
+
+/******************** STATEMENTS ************************/
+
+.statements .panel-wrapper .panel-info {
+    background-color: #ddd;
+    color: #000;
+}
+
+.statements .panel-wrapper .panel-info .ldb-button {
+    clear: both;
+}
+
+.statements .panel-wrapper .panel-info .cont-amount {
+    text-align: left;
+}
+
+.statements .panel-wrapper .panel-info .cont-title {
+    margin-bottom: 20px;
+}
+
+.panel-wrapper .panel-info .row {
+    width: 100%;
+    float: left;
+    /*margin: 0;*/
+}
+
+.statements .panel-wrapper .panel-info .row.last-row {
+    /*margin-bottom: 20px;*/
+}
+
+.statements .panel-wrapper .panel-info .line {
+   margin-bottom: 20px;
+   background-color: #fff;
+}
+
+.statements .icon-wrapper {
+   float: right;
+}
+
+.icon-statements { 
+    width: 28px;
+    height: 28px;
+    background: url("../assets/lender_sprite.png") no-repeat;
+    float: left;
+    margin-left: 10px;
+}
+
+.email-icon { 
+    background-position: -84px 0;
+}
+
+.print-icon { 
+    background-position: -234px 0;
+}
+
+.download-icon { 
+    background-position: -56px 0;
+}
+
+.arrow-icon.icon-statements {
+    background-position: -28px 0;
+}
+
+.statements.table-row .row-item {
+    cursor: default;
+}  
+
+.statements .arrow-wrapper {
+    float: right;
+    cursor: pointer;
+}
+
+
+/******************** STATEMENTS ************************/
+
+/******************** DEBIT CARD ************************/
+
+.debit-card {
+    width: 498px;
+    margin: 0 auto;
+}
+
+.debit-card a {
+    color: #0b9efb;
+}
+
+.debit-card form {
+    float: left;
+}
+
+.debit-card span {
+    color: #F00;
+}
+
+.debit-card input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #999;
+}
+
+.debit-card select {
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #999;
+}
+
+.card-number {
+    float: left;
+    width: 64%;
+}
+
+.security-code {
+    float: right;
+    width: 31%;
+}
+
+.debit-card .form-control {
+    margin-bottom: 30px;
+    float: left;
+    width: 100%;
+}
+
+.expiry-date {
+    width: 64%;
+}
+
+.expiry-date .exp-month {
+    width: 48%;
+    float: left;
+}
+
+.expiry-date .exp-year {
+    width: 48%;
+    float: right;
+}
+
+.exp-label {
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.cards-img {
+    position: absolute;
+    left: 0px;
+    margin-top: 63px;
+    margin-left: 40px;
+}
+
+.cards-img img {
+    width: 75%;
+}
+
+
+
+/******************** DEBIT CARD ************************/

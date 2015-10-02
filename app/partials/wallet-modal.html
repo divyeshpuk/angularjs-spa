@@ -1,0 +1,75 @@
+<modal>
+	<div ng-controller="walletWithdrawController">
+		<div class="withdraw-modal">
+			<article class="modal-step-1 ng-hide" ng-hide="modalStep_1">
+				<div class="cont-title">WITHDRAWAL</div>
+				<p class="prod-desc row main-desc">Lorem ipsum dolor sit amet, consec tetur adipi scing elit dolore aliqua. Lorem ipsum dolor sit amet.</p>
+				<div class="line top"></div>
+				<ul class="table-row">
+					<li class="col-5-12">
+			       		<span class="prod-icon pound-square"></span>
+			       		<div class="row-cell-elem">
+			       			<p class="prod-type">AVAILABLE FUNDS</p>
+			       		</div>
+				    </li>
+				    <li class="col-4-12">
+				    	<p>AMOUNT AVAILABLE</p>
+				    	<p class="modal-amount"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ user.availableFunds | number : 2 }}</p>
+				    </li>
+				    <li class="col-3-12 last-col">
+				    	<div class="pound-icon"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span></div>
+				    	<input class="amount-pound" ng-model="user.pound" ng-change="updateValueWithdraw(user)" type="text" allow-numbers-only="" format-amount="user" id="wlt-wdr" >
+				       	<div class="line"></div>
+				       	<p class="amount-error wdr-err" ng-show="user.wdrAmtError">Please enter correct amount.</p>
+					</li>
+			    </ul>
+			    <ul class="table-row last-row">
+			    	<li class="col-1-2">
+			    		<div class="cont-title">TOTAL WITHDRAWAL REQUEST</div>
+					</li>
+					<li class="col-1-2 cont-amount last-col">
+						<span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ withdrawAvailableAmount | number : 2 }}
+					</li>
+			    </ul>
+				<div class="modal-btn-center">
+					<button type="button" class="ldb-button withdraw-btn" ng-click="withdraw()">WITHDRAW</button>
+				</div>
+			</article>	
+
+			<article class="modal-step-2 ng-hide" ng-hide="modalStep_2">
+				<div class="cont-title">CONFIRM WITHDRAWAL</div>
+				<ul class="table-row first-row">
+			    	<li class="col-1-2">
+			    		<div class="cont-title">TOTAL WITHDRAWAL REQUEST</div>
+					</li>
+					<li class="col-1-2 cont-amount last-col">
+						<span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ withdrawAvailableAmount | number : 2  }}
+					</li>
+			    </ul>
+			    <ul class="table-row last-row">
+			    	<li class="col-1-3">
+			    		<div class="cont-title">BANK ACCOUNT</div>
+					</li>
+					<li class="col-1-3">
+						HSBC BANK PLC account
+					</li>
+					<li class="col-1-3 last-col">
+						<strong>12345678</strong>
+					</li>
+			    </ul>
+				<div class="modal-btn-center">
+					<button type="button" class="ldb-button withdraw-btn" ng-click="withdrawConfirm()">CONFIRM</button>
+				</div>
+				<button type="button" class="modal back-btn" ng-click="modalBackBtn()"></button>
+			</article>
+
+			<article class="modal-step-3 ng-hide" ng-hide="modalStep_3">
+				<div class="cont-title">Thank you. We received your request.</div>
+				<div class="modal-btn-outer">
+					<button type="button" class="ldb-button withdraw-btn" ng-click="closeModal()">BACK TO WALLET</button>
+				</div>
+			</article>
+			<button type="button" class="modal close-btn" ng-click="closeModal()"></button>
+		</div>			
+	</div>
+</modal>

@@ -1,0 +1,87 @@
+<div class="container" ng-cloak> 
+	<div class="grid grid-pad">
+		
+		<section class="col-3-12">
+			<div class="content curr-port">
+				<div class="cont-title row">CURRENT PORTFOLIO</div>
+				<p class="cont-copy row">This is the total amount invested</p>
+				<div class="cont-amount"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ user.amtInvested | number : 2 }}</div>
+				<div class="amnt-info-big row">INVESTED</div>
+				<p class="cont-copy row">Total pending withdraw amount:</p>
+				<div class="cont-amount">- <span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ user.pendingProdWdr | number : 2 }}</div>
+				<div class="amnt-info-sml">PENDING</div>
+			</div>
+			<div class="content intrst-earnd">
+				<div class="cont-title row">TOTAL INTEREST EARNED</div>
+				<div class="cont-amount"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ user.interestEarnedToDate | number : 2 }}</div>
+				<div class="amnt-info-big row">TO DATE</div>
+				<div class="cont-amount"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ user.accruedAmount | number : 2 }}</div>
+				<div class="amnt-info-sml">ACCRUED THIS MONTH<br>(NOT PAID YET)</div>
+			</div>
+		</section>
+		
+		<section class="col-6-12">
+			<div class="content port-history">
+				<div class="cont-title caption-row">PORTFOLIO BREAKDOWN</div>
+				<div ng-show="portfolio.length === 0">
+					<p class="cont-copy caption-row">Lorem ipsum dolor sitmet, consec tetur adipi scing elit dolore aliqua.</p>
+			    	<a class="ldb-button invest-btn" href="#/invest">INVEST NOW</a>
+				</div>
+				<ul class="table-header" ng-show="portfolio.length > 0">
+					<li class="col-5-12">Product</li>
+					<li class="col-3-12">Interest Rate</li>
+					<li class="col-4-12 last-col">Amount Invested</li>
+				</ul>
+								
+				<div class="table-row prod" ng-repeat=" product in portfolio | orderBy: '-dateTimePurchase' " >
+					<ul class="row-item" ng-click="selectProduct(product, portfolio)" ng-class="{'hover-off':product.selected, 'hover-on':!product.selected}">
+						<li class="col-5-12">
+					   		<span class="prod-icon {{ product.prodIcon }}"></span>
+					   		<p class="prod-type">{{ product.prodType }}</p>
+					   		<span class="prod-term">{{ product.prodTerm }}</span>
+					    </li>
+					    <li class="col-3-12">
+					   		<span class="prod-percent">{{ product.intRate }}</span>
+					   		<span class="prod-pa">P.A.</span>
+					    </li>
+					    <li class="col-4-12 last-col">
+					       	<span class="investd-pound"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ product.amtInvested | number : 2 }}</span>
+					    </li>
+					</ul>
+
+					<div class="panel-wrapper" ng-show="product.selected">
+						<div class="pointer">
+							<img src="assets/pointer.png">
+						</div>
+						<div class="panel-info">
+							<div class="panel-title">
+								<span class="prod-type">{{ product.prodType }}</span>
+								<span class="prod-term">{{ product.prodTerm }}</span>
+							</div>
+							<p>{{ product.prodDesc }}</p>
+							<div class="panel-int-info">
+								<div class="panel-int-copy">
+									<div class="cont-title">INTEREST EARNED</div>
+									<p>Lorem ipsum dolor sit amet, consec tetur adipi scing elit dolore aliqua.</p>	
+								</div>
+								<div class="panel-int-amt"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ product.intEarned | number : 2 }}</div>
+							</div>
+							<button type="button" class="ldb-button invest-btn" ng-click="openInvModal()">INVEST MORE</button>
+							<button type="button" class="ldb-button withdraw-btn" ng-click="openWdrModal()" ng-class="{'disable':product.disableWithdraw}" ng-disabled="product.disableWithdraw">WITHDRAW</button>
+						</div>
+					</div>
+					<div class="line-wrapper">
+						<div class="line"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="col-3-12">
+			<div class="content temp-box"></div>
+		</section>
+
+	</div>
+</div>
+
+<ng-include src=" 'app/partials/portfolio-modal.html' "></ng-include>
