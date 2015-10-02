@@ -1,0 +1,101 @@
+<modal>
+	<div ng-controller="investCheckoutController">
+		<article class="modal-step-1-2 ng-hide" ng-hide="modalStep_1_2">
+			<div class="cont-title">CHECK OUT</div>	
+			<ul class="table-row">
+				<li class="col-6-12">
+					<div class="row-title">TOTAL AMOUNT TO PAY</div>
+				</li>
+				<li class="col-6-12 last-col">
+					<div class="cont-amount"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ totalValToPay | number : 2 }}</div>
+				</li>
+			</ul>
+		</article>	
+
+		<article class="modal-step-1 ng-hide" ng-hide="modalStep_1">
+			<ul class="table-row" ng-repeat="product in products" ng-if="product['selected']">
+				<li class="col-6-12 prod-col">
+		       		<span class="prod-icon fixed"></span>
+		       		<span class="prod-type">{{ product.prodType }}</span>
+		       		<span class="prod-term">{{ product.prodTerm }}</span>
+		       		<p class="prod-desc">{{ product.prodDesc }}</p>
+			    </li>
+			    <li class="col-3-12 rate-col">
+		       		<span class="prod-percent">{{ product.intRate }}</span>
+		       		<span class="prod-pa">P.A.</span>
+			    </li>
+			    <li class="col-3-12 last-col amount-col">
+			    	<div class="pound-icon"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span></div>
+			       	<input class="amount-pound" ng-model="product.pound" ng-change="updateTotalAmount(product, products)" type="text" allow-numbers-only="" format-amount="product" id="inv-mod{{$index}}" >
+			       	<div class="line"></div>
+			    </li>
+			</ul>
+			<p class="amount-error inv-err" ng-class="{'visible': modalAmtError}">Please enter correct amount.</p>				
+			<div class="modal-btn-center">
+				<button type="button" class="ldb-button invest-btn ng-hide" ng-hide="payByDBCard" ng-click="debitCardTransfer()">PAY BY DEBIT CARD</button>
+				<button type="button" class="ldb-button invest-btn ng-hide" ng-hide="payByAvlAmt" ng-click="payByAvlFunds()">PAY BY AVAILABLE FUNDS</button>
+			</div>
+		</article>	
+
+		<article class="modal-step-2 ng-hide" ng-hide="modalStep_2">
+			<div class="cont-title">Secured Payment Getway</div>
+			<div class="debit-card">
+				<div class="cards-img">
+					<img src="assets/cards.png"/>
+				</div>
+				<form>
+					<div class="form-control">
+						<label for="">Name on card<span>*</span></label> 
+						<input type="text" value="John Doe" name="" id="">
+					</div>
+					<div class="form-control">
+						<div class="card-number">
+							<label for="card-number">Card number<span>*</span></label>  
+							<input type="text" value="1234 2345 3456" name="" id="card-number">
+						</div>
+						<div class="security-code">
+							<label for="security-code">Security code<span>*</span></label> 
+							<input type="text" value="123" name="" id="security-code">
+						</div>	
+					</div>
+					<div class="form-control">
+						<p class="exp-label">Expiry date<span>*</span></p> 
+						<div class="expiry-date">
+							<select class="exp-month">
+								<option value="">January</option>
+								<option value="">February</option>
+								<option value="">March</option>
+								<option value="">April</option>
+								<option value="">May</option>
+								<option value="">June</option>
+								<option value="">July</option>
+								<option value="">August</option>
+								<option value="">September</option>
+								<option value="">October</option>
+								<option value="">November</option>
+								<option value="">December</option>
+							</select>
+							<select class="exp-year">
+								<option value="">2018</option>
+								<option value="">2017</option>
+								<option value="">2016</option>
+							</select>
+						</div>
+					</div>
+					<div class="modal-btn-outer">
+						<button type="button" class="ldb-button invest-btn" ng-click="purchaseByDbtCard()">PURCHASE</button>
+					</div>
+				</form>
+			</div>
+			<button type="button" class="modal back-btn" ng-click="modalBackBtn()"></button>
+		</article>
+
+		<article class="modal-step-3 ng-hide" ng-hide="modalStep_3">
+			<div class="cont-title">Thank you for lending with Landbay.</div>
+			<div class="modal-btn-outer">
+				<a class="ldb-button invest-btn" href="#/portfolio">PORTFOLIO</a>
+			</div>
+		</article>
+		<button type="button" class="modal close-btn" ng-click="closeModal()"></button>
+	</div>
+</modal>

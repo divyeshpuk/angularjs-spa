@@ -1,0 +1,72 @@
+<div class="container"> 
+	<div class="grid grid-pad">
+		<section class="col-6-12">
+			<div class="content prod">
+				<div class="caption-row">
+					<div class="cont-title">INVEST NOW - ALL PRODUCTS</div>
+					<ul class="radio-search">
+						<li class="radio-item">
+							<input ng-model="searchText.value" id="all" type="radio" value="">
+							<label for="all">All</label>
+						</li>
+						<li class="radio-item">
+							<input ng-model="searchText.value" id="fixed" type="radio" value="fixed">
+							<label for="fixed">Fixed</label>
+						</li>
+						<li class="radio-item">
+							<input ng-model="searchText.value" id="tracker" type="radio" value="tracker">
+							<label for="tracker">Tracker</label>
+						</li>
+					</ul>
+				</div> 
+			    <ul class="table-row" ng-repeat="product in products | filter: searchText.value" ng-cloak> 
+					<li class="col-6-12 prod-col">
+			       		<span class="prod-icon {{ product.prodIcon }}"></span>
+			       		<span class="prod-type">{{ product.prodType }}</span>
+			       		<span class="prod-term">{{ product.prodTerm }}</span>
+			       		<p class="prod-desc">{{ product.prodDesc }}</p>
+				    </li>
+				    <li class="col-3-12 rate-col">
+			       		<span class="prod-percent">{{ product.intRate }}</span>
+			       		<span class="prod-pa">P.A.</span>
+				    </li>
+				    <li class="col-3-12 amount-col">
+				    	<div class="pound-icon"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span></div>
+				       	<input class="amount-pound" ng-model="product.pound" ng-change="updateTotalAmount(product, products)" type="text" allow-numbers-only="" format-amount="product" id="inv-tab{{$index}}" >
+				       	<div class="line"></div>
+				    </li>
+			    </ul>
+			</div>
+			<p class="amount-error inv-err avl-err" ng-class="{'visible': invAmtError}">Please enter amount.</p>
+		</section>	
+
+		<section class="col-6-12" ng-cloak>
+			<section class="col-1-2 order-col">
+				<div class="content order">
+					<div class="cont-title row">THIS ORDER</div>
+					<p class="cont-copy row">Lorem ipsum dolor sit amet, consec tetur adipi scing elit dolore aliqua.</p>
+					<div class="cont-amount row"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ investedAmount | number : 2 }}</div>
+					<div class="cont-title row">AVAILABLE FUNDS</div>
+					<div class="cont-amount row"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ userAvailableFunds | number : 2 }}</div>
+					<div class="row">
+						<input id="funds" type="checkbox" ng-model="user.availableFundsSelected" ng-change="useAvailableFunds()">
+						<label for="funds">Use available funds</label>
+					</div>
+					<div class="line"></div>
+					<div class="cont-title row">TOTAL AMOUNT TO PAY</div>
+					<div class="cont-amount row"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ totalValToPay | number : 2 }}</div>
+					<button type="button" class="ldb-button invest-btn" ng-click="openModal()">CHECKOUT</button>
+				</div>
+			</section>			
+			<section class="col-1-2 incentv-col">
+				<div class="content incentv">
+					<div class="cont-title row">CASH BACK of</div>
+					<div class="incentv-amount row"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>50</div>
+					<p class="incentv-desc row">with a minimum investment of <span ng-bind-html="trustedPoundSymbol"></span>2,000</p>
+				</div>
+			</section>
+		</section>
+	</div>
+</div>
+
+<ng-include src=" 'app/partials/invest-modal.html' "></ng-include>

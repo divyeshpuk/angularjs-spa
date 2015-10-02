@@ -1,0 +1,65 @@
+<!DOCTYPE html>  
+	<html ng-app="lenderApp">
+		<head>
+			<meta charset="UTF-8">
+			<title>Lender Dashboard</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" type="text/css" href="vendors/normalize.css" />
+			<link rel="stylesheet" type="text/css" href="vendors/simple-grid/simplegrid.css" />
+			<link rel="stylesheet" type="text/css" href="style/style.css" />
+			<script src="vendors/angular/angular.min.js"></script>
+		</head>
+
+		<body ng-class="{ 'overflow-hidden': bodyStyle }" ng-controller="appController">
+			<div class="container">
+				<div class="grid grid-pad">	
+					<header class="col-11-12">
+						<div class="landbay-logo">
+							<a href="#/invest">
+								<img src="assets/landbay_logo.png" alt="Landbay logo">
+							</a>
+						</div>
+						<nav>
+							<navbar></navbar>
+							<div class="line"></div>
+						</nav>
+					</header>
+					<div class="col-1-12 log-out">
+						<a href="thank-you.html">Log out</a>
+					</div>
+				</div>	
+			</div>
+
+			<div ng-controller="shellController">
+				<ng-view></ng-view>
+			</div>	
+			
+			<script src="vendors/angular/angular-sanitize.min.js"></script>
+			<script src="vendors/angular/angular-route.min.js"></script>
+			<script src="app/modules/appModule.js"></script>
+			<script src="app/modules/shellModule.js"></script>
+			<script src="app/modules/walletPanelModule.js"></script>
+			<script src="app/controllers/appController.js"></script>
+			<script src="app/controllers/shellController.js"></script>
+			<script src="app/controllers/investController.js"></script>
+			<script src="app/controllers/investCheckoutController.js"></script>
+			<script src="app/controllers/portfolioController.js"></script>
+			<script src="app/controllers/portInvestController.js"></script>
+			<script src="app/controllers/portWithdrawController.js"></script>
+			<script src="app/controllers/walletController.js"></script>
+			<script src="app/controllers/walletPanelController.js"></script>
+			<script src="app/controllers/walletWithdrawController.js"></script>
+			<script src="app/services/dataSource.js"></script>
+			<script src="app/services/inputOps.js"></script>
+			<script src="app/services/accordion.js"></script>
+			<script src="app/services/modal.js"></script>
+			<script src="app/directives/navbar.js"></script>
+			<script src="app/directives/allowNumbersOnly.js"></script>
+			<script src="app/directives/formatAmount.js"></script>
+			<script src="app/directives/modal.js"></script>
+			<script src="app/directives/walletPaneTabs.js"></script>
+			<script src="app/directives/walletPane.js"></script>
+			<script src="app/directives/pagination/dirPagination.js"></script>
+
+		</body>
+	</html>

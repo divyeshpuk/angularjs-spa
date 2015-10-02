@@ -1,0 +1,167 @@
+<section class="col-6-12" ng-controller="walletPanelController">
+	<wallet-pane-tabs>
+		<wallet-pane title="Recent activities">
+			<div class="table-row">
+				<div class="row-item">
+					<ul class="row-item-inner">
+						<li class="col-1-1">
+					   		<p class="">Fixed Rate</p>
+					    </li>
+					</ul>
+				</div>
+				<div class="line-wrapper">
+					<div class="line"></div>
+				</div>
+			</div>
+			<div class="table-row">
+				<div class="row-item">
+					<ul class="row-item-inner">
+						<li class="col-1-1">
+					   		<p class="">Tracker Rate</p>
+					    </li>
+					</ul>
+				</div>
+				<div class="line-wrapper">
+					<div class="line"></div>
+				</div>
+			</div>
+		</wallet-pane>
+		<wallet-pane title="History">
+			<div class="misc-search">
+				<ul>
+					<li class="col-1-3 text-search">
+						<input type="text" ng-model="searchText.value" placeholder="Search">
+					</li>
+					<li class="col-1-3">
+						 <select class="months" ng-model="selectedMonth" ng-options="month.name for month in months" ng-change="updateMonth(selectedMonth.name)"></select> 
+					</li>
+					<li class="col-1-3 date-search">
+						from:<input type="text" >
+						to:<input type="text" >
+					</li>
+				</ul>
+			</div>
+			<ul class="radio-search">
+				<li class="radio-item" ng-repeat="item in radio">
+					<input ng-model="searchText.value" id="{{ item.value }}" type="radio" value="{{ item.search }}">
+					<label for="{{ item.value }}">{{ item.value }}</label>
+				</li>
+			</ul>
+			<div class="table-header">
+				<ul class="row-item-inner">
+					<li class="col-3-12 first-col">
+						<a href="" ng-click="rowSort(0)">Date</a>
+					</li>
+					<li class="col-6-12">
+						<a href="" ng-click="rowSort(1)">Type</a>
+					</li>
+					<li class="col-3-12 last-col">
+						<a href="" ng-click="rowSort(2)">Amount</a>
+					</li>
+				</ul>
+			</div>
+			<div class="table-row history" dir-paginate="item in historyData | orderBy:orderProp | filter:searchText.value | itemsPerPage: pageSize">
+				<div class="row-item" ng-click="selectRow( item, historyData );" ng-class="{'hover-off':item.selected, 'hover-on':!item.selected}">
+					<ul class="row-item-inner">
+						<li class="col-3-12">
+					   		<span class="icon-{{ item.key }} icon-history"></span>
+					   		<p>{{ item.date }}</p>
+					    </li>
+					    <li class="col-6-12">
+					   		<span>{{ item.type }} - {{ item.ref }}</span>
+					    </li>
+					    <li class="col-3-12 last-col">
+					       	<span ng-bind-html="trustedPoundSymbol"></span>{{ item.amount | number : 2 }}
+					    </li>
+					</ul>
+				</div>			
+				<div class="panel-wrapper" ng-show="item.selected">
+					<div class="pointer">
+						<img src="assets/pointer-light.png">
+					</div>
+					<div class="panel-info">
+						<div class="row">
+							<p class="cont-title">{{ item.type }}</p>
+							<div class="cont-amount"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ item.amount | number : 2 }}</div>
+						</div>
+						<div class="row">
+							<p class="cont-title">SOURCE <span style="color:#666;">&#10095;</span></p>
+						</div>
+						<div class="line"></div>
+						<div class="row last-row">
+							<div class="col-1-2">
+								<span class="big-tick"></span>
+								<p class="cont-title">PROCESSED <span style="color:#458B00;">&#10004;</span></p>
+								<div>{{ item.date }}</div>
+							</div>
+							<div class="col-1-2">
+								<p class="cont-title">REFERENCE</p>
+								<div class="cont-ref">{{ item.ref }}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="line-wrapper">
+					<div class="line"></div>
+				</div>
+			</div>
+			<dir-pagination-controls boundary-links="true"  template-url="app/directives/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+		</wallet-pane>
+		<wallet-pane title="Statements">
+			<div class="table-row statements" ng-repeat="item in statements">
+				<div class="row-item">
+					<ul class="row-item-inner">
+						<li class="col-6-12">
+					   		<p class="">{{ item.month }}</p>
+					    </li>
+					    <li class="col-5-12">
+					    	<div class="icon-wrapper">
+					    		<span class="download-icon icon-statements"></span>
+						   		<span class="email-icon icon-statements"></span>
+						   		<span class="print-icon icon-statements"></span>
+					    	</div>
+					    </li>
+					    <li class="col-1-12 last-col">
+					    	<div class="arrow-wrapper" ng-click="selectRow( item, statements )">
+					    		<span class="arrow-icon icon-statements" ></span>
+					    	</div>
+					    </li>
+					</ul>
+				</div>						
+				<div class="panel-wrapper" ng-show="item.selected">
+					<div class="pointer">
+						<img src="assets/pointer-light.png">
+					</div>
+					<div class="panel-info">
+						<div class="cont-title row">{{ item.month }}</div>
+						<div class="row">
+							<div class="col-1-2">
+								<p>MONTHLY INTEREST</p>
+								<div class="cont-amount"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ item.interest | number : 2 }}</div>
+							</div>
+							<div class="col-1-2">
+								<p>TOTAL INTEREST EARNED</p>
+								<div class="cont-amount"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ item.totalInt | number : 2 }}</div>
+							</div>
+						</div>
+						<div class="line"></div>
+						<div class="row last-row">
+							<div class="col-1-2">
+								<p>CASH ACCOUNT</p>
+								<div class="cont-amount"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ item.cashAcc | number : 2 }}</div>
+							</div>
+							<div class="col-1-2">
+								<p>LOAN PORTFOLIO</p>
+								<div class="cont-amount"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ item.loanPort | number : 2 }}</div>
+							</div>
+						</div>
+						<a href class="ldb-button">DOWNLOAD</a>	
+					</div>
+				</div>
+				<div class="line-wrapper">
+					<div class="line"></div>
+				</div>
+			</div>
+		</wallet-pane>
+	</wallet-pane-tabs>
+</section>

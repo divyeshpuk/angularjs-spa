@@ -1,0 +1,37 @@
+<div class="container" ng-cloak> 
+	<div class="grid grid-pad">
+		
+		<section class="col-3-12">
+			<div class="content cash-acc">
+				<div class="cont-title row">AC NUMBER - 12345678</div>
+				<div class="line"></div>
+				<div class="cont-title row">CASH ACCOUNT</div>
+				<p class="cont-copy row">Balance available to withdraw or reinvest</p>
+				<div class="cont-amount"><span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ user.availableFunds | number : 2 }}</div>
+				<div class="amnt-info-sml row">AVAILABLE FUNDS</div>
+				<p class="cont-copy row">Total pending withdraw amount:</p>
+				<div class="cont-amount">- <span class="trusted-symbol" ng-bind-html="trustedPoundSymbol"></span>{{ user.pendingAvlAmtWdr | number : 2 }}</div>
+				<div class="amnt-info-sml row">PENDING</div>
+				<button type="button" class="ldb-button withdraw-btn" ng-click="openModal()" ng-class="{'disable':user.disableWithdraw}" ng-disabled="user.disableWithdraw">WITHDRAW</button>
+			</div>
+			<div class="content bank-acc">
+				<div class="cont-title row">LINKED BANK ACCOUNT</div>
+				<p class="cont-sub-title row">HSBC Bank PLC</p>
+				<p class="cont-copy row">Account Number: <span>12345678</span></p>
+				<p class="cont-copy row">Sort Code: <span>12-34-56</span></p>
+				<p class="cont-copy row">Linked Debit Card: <span>1234 2345 3456</span></p>
+				<p class="cont-copy">Visa expiry date: <span>10/16</span></p>
+			</div>
+		</section>
+
+		<ng-include src=" 'app/partials/wallet-pane-section.html' "></ng-include>
+
+		<section class="col-3-12">
+			<div class="content temp-box"></div>
+		</section>
+
+	</div>
+</div>
+
+<ng-include src=" 'app/partials/wallet-modal.html' "></ng-include>
+
